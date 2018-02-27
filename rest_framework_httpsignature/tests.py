@@ -137,7 +137,7 @@ class BuildSignatureTestCase(SimpleTestCase):
         signature_string = self.auth.build_signature(
             self.KEYID, SECRET, req)
         signature = re.match(
-            '.*signature="(.+)",?.*', signature_string).group(1)
+            r'.*signature="(.+)",.*', signature_string).group(1)
         self.assertEqual(expected_signature, signature)
 
 
